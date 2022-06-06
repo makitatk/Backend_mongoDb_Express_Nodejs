@@ -10,10 +10,11 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 //middlewares
 //app.use(express.json());
-app.use("/api/v1", authRouter);
+app.use("/api/v1/auth", authRouter);
 
 const PORT = process.env.PORT || 5000;
 
